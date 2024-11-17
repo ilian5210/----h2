@@ -132,11 +132,12 @@ def hsl2rgb(h, s, l):
     return cv2.merge((b, g, r))
 
 #=====================================================================#
+
 def equalize_gray_image(img):
     cv2.imshow('OrImg', img)
     cv2.waitKey(0)
 
-    hist = img2hist(img,'Gray')
+    hist = img2hist(img, 'Gray')
     cdf_hist = hist2cdf(hist)
     sum_val = sum_hist(hist)
 
@@ -282,17 +283,23 @@ def equalize_hsl_image(img):
 
 #--------------------------------main---------------------------------#
 
-# img = cv2.imread('imgs/img3.png', 0)
-# equalize_gray_image(img)
+img1 = cv2.imread('imgs/img1.jpg', 0)
+equalize_gray_image(img1)
 
-# img2 = cv2.imread('imgs/img2.jpg', 1)  
-# equalize_rgb_image(img2)
+img1 = cv2.imread('imgs/img1.jpg', 1)  
+equalize_rgb_image(img1)
 
-# img4 = cv2.imread('imgs/img4.png', 1)
-# equalize_rgb_image(img4)
+img1 = cv2.imread('imgs/img1.jpg', 1)
+equalize_hsl_image(img1)
 
-img7 = cv2.imread('imgs/img7.jpg', 1)
-equalize_hsl_image(img7)
+img2 = cv2.imread('imgs/img2.png', 0)
+equalize_gray_image(img2)
+
+img2 = cv2.imread('imgs/img2.png', 1)
+equalize_rgb_image(img2)
+
+img2 = cv2.imread('imgs/img2.png', 1)
+equalize_hsl_image(img2)
 
 
 

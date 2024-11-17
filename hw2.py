@@ -271,6 +271,7 @@ def equalize_hsl_image(img):
     plt.xlim(0, 255)
     plt.show()
 
+
     equalized_img = hsl2rgb(h, s, new_l)
 
     cv2.imshow('HSL Equalized Image', equalized_img)
